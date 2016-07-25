@@ -6,6 +6,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Template10.Utils;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Foundation.Diagnostics;
 using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,6 +27,8 @@ namespace XamlPerf.Views
     {
         public MailRelativePanel()
         {
+            Services.LoggingService.AddUserMark("Start Mail/RelativePanel");
+            Loaded += async (s, e) => await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => { Services.LoggingService.AddUserMark("Loaded Mail/RelativePanel"); });
             this.InitializeComponent();
         }
 

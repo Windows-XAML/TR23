@@ -57,8 +57,8 @@
                       RelativePanel.Below="LeftNewMailButton"
                       RequestedTheme="Dark">
                 <ListView.Header>
-                    <Button  HorizontalAlignment="Stretch"
-                        HorizontalContentAlignment="Left"
+                    <Button HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
                             Background="Transparent"
                             Padding="0"
                             RequestedTheme="Dark">

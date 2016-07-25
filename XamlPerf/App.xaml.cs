@@ -1,6 +1,7 @@
 using System;
 using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
+using Windows.Foundation.Diagnostics;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Data;
 
@@ -12,7 +13,10 @@ namespace XamlPerf
     [Bindable]
     sealed partial class App : Template10.Common.BootStrapper
     {
-        public App() { InitializeComponent(); }
+        public App()
+        {
+            InitializeComponent();
+        }
 
         public override UIElement CreateRootElement(IActivatedEventArgs e) => NavigationServiceFactory(BackButton.Attach, ExistingContent.Include).Frame;
 

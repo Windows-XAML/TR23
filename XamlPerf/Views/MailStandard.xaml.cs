@@ -26,6 +26,8 @@ namespace XamlPerf.Views
     {
         public MailStandard()
         {
+            Services.LoggingService.AddUserMark("Start Mail/Standard");
+            Loaded += async (s, e) => await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () => { Services.LoggingService.AddUserMark("Loaded Mail/Standard"); });
             this.InitializeComponent();
         }
 
