@@ -12,6 +12,9 @@ namespace XamlPerf.ViewModels
     {
         public void GoToMailRelativePanel() { NavigationService.Navigate(typeof(Views.MailRelativePanel)); }
         public void GoToMailStandard() { NavigationService.Navigate(typeof(Views.MailStandard)); }
+
+        public void GoToNewsStandard() { NavigationService.Navigate(typeof(Views.NewsStandardPage)); }
+        public void GoToNewsIncremental() { NavigationService.Navigate(typeof(Views.NewsIncrementalPage)); }
     }
 }
 
