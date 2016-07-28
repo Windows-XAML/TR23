@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D37B602-91F8-4924-8A41-1C7F79022795}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NewsService</RootNamespace>
+    <AssemblyName>NewsService</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <PlatformTarget>ARM</PlatformTarget>
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="Data\Data.json" />
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Article.cs" />
+    <Compile Include="ArticleText.cs" />
+    <Compile Include="Incremental\INewsService.cs" />
+    <Compile Include="Incremental\NewsCache.cs" />
+    <Compile Include="Incremental\NewsService.cs" />
+    <Compile Include="Incremental\NewsServiceItemSource.cs" />
+    <Compile Include="Models\ArticleQueryResult.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Shared\IncrementalItemSourceBase.cs" />
+    <Compile Include="Shared\IncrementalLoadingCollection.cs" />
+    <EmbeddedResource Include="Properties\NewsService.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Careers_FY13_Connector_amcnamee5.jpg" />
+    <Content Include="Images\Careers_FY13_Connector_Female_t-irisxu.jpg" />
+    <Content Include="Images\Careers_FY13_Connector_Male_v-scslac2.jpg" />
+    <Content Include="Images\Careers_FY13_Family_nicolese2.jpg" />
+    <Content Include="Images\Careers_FY13_Female.jpg" />
+    <Content Include="Images\Careers_FY13_Female_cichou.jpg" />
+    <Content Include="Images\MSMEA12_MohammedH_01.jpg" />
+    <Content Include="Images\MSMEA12_Neveen_01.jpg" />
+    <Content Include="Images\MSMEA12_Neveen_07.jpg" />
+    <Content Include="Images\MSMEA12_Patrick.jpg" />
+    <Content Include="Images\MSMEA12_Samer_04.jpg" />
+    <Content Include="Images\MSMEA12_Samer_Joao.jpg" />
+    <Content Include="Images\MSMEA12_Vish_05.jpg" />
+    <Content Include="Images\OFF12_Adriana_02.png" />
+    <Content Include="Images\OFF12_Allisandro_02.png" />
+    <Content Include="Images\OFF12_Annie_01.png" />
+    <Content Include="Images\OFF12_Bahia_02.png" />
+    <Content Include="Images\OFF12_Bahia_03.png" />
+    <Content Include="Images\OFF12_Bahia_04.png" />
+    <Content Include="Images\OFF12_Bahia_05.png" />
+    <Content Include="Images\OFF12_Bahia_07.png" />
+    <Content Include="Images\OFF12_Blake_01.png" />
+    <Content Include="Images\OFF12_Dylan_01.png" />
+    <Content Include="Images\OFF12_Dylan_02.png" />
+    <Content Include="Images\OFF12_Envy_01.png" />
+    <Content Include="Images\OFF12_Franc_03.png" />
+    <Content Include="Images\OFF12_Franc_04.png" />
+    <Content Include="Images\OFF12_Hope_04.png" />
+    <Content Include="Images\OFF12_Hope_05.png" />
+    <Content Include="Images\OFF12_Inez_03.png" />
+    <Content Include="Images\OFF12_Jacy_01.png" />
+    <Content Include="Images\OFF12_Jessica_01.png" />
+    <Content Include="Images\OFF12_Joi_02.png" />
+    <Content Include="Images\OFF12_JP_01.png" />
+    <Content Include="Images\OFF12_JP_02.png" />
+    <Content Include="Images\OFF12_Justice_01.png" />
+    <Content Include="Images\OFF12_Kaori_02.png" />
+    <Content Include="Images\OFF12_Kaori_05.png" />
+    <Content Include="Images\OFF12_Lorraine_04.png" />
+    <Content Include="Images\OFF12_Michael_01.png" />
+    <Content Include="Images\OFF12_Michael_02.png" />
+    <Content Include="Images\OFF12_Mike_03.png" />
+    <Content Include="Images\OFF12_Mike_05.png" />
+    <Content Include="Images\OFF12_Nanemi_01.png" />
+    <Content Include="Images\OFF12_Nanemi_03.png" />
+    <Content Include="Images\OFF12_Nina_03.png" />
+    <Content Include="Images\OFF12_Output_01.png" />
+    <Content Include="Images\OFF12_Output_03.png" />
+    <Content Include="Images\OFF12_Output_04.png" />
+    <Content Include="Images\OFF12_Output_06.png" />
+    <Content Include="Images\OFF12_Output_08.png" />
+    <Content Include="Images\OFF12_Output_09.png" />
+    <Content Include="Images\OFF12_Output_10.png" />
+    <Content Include="Images\OFF12_Pam_02.png" />
+    <Content Include="Images\OFF12_Patrick_01.png" />
+    <Content Include="Images\OFF12_Patrick_02.png" />
+    <Content Include="Images\OFF12_Patrick_04.png" />
+    <Content Include="Images\OFF12_Philame_01.png" />
+    <Content Include="Images\OFF12_Proto-Slider_02.png" />
+    <Content Include="Images\OFF12_Proto-Tablet_01.png" />
+    <Content Include="Images\OFF12_Proto-Tablet_02.png" />
+    <Content Include="Images\OFF12_Richard_02.png" />
+    <Content Include="Images\OFF12_Rob_01.png" />
+    <Content Include="Images\OFF12_Sadek_03.png" />
+    <Content Include="Images\OFF12_Sadek_04.png" />
+    <Content Include="Images\OFF12_Sadek_05.png" />
+    <Content Include="Images\OFF12_Sadek_06.png" />
+    <Content Include="Images\OFF12_Sadek_08.png" />
+    <Content Include="Images\OFF12_Scene_01.png" />
+    <Content Include="Images\OFF12_Scene_06.png" />
+    <Content Include="Images\OFF12_Scene_12.png" />
+    <Content Include="Images\OFF12_Scene_13.png" />
+    <Content Include="Images\OFF12_Scene_16.png" />
+    <Content Include="Images\OFF12_Siri_04.png" />
+    <Content Include="Images\OFF12_Siri_07.png" />
+    <Content Include="Images\OFF12_Slate7_01.png" />
+    <Content Include="Images\OFF12_Thomas_01.png" />
+    <Content Include="Images\OFF12_Thomas_02.png" />
+    <Content Include="Images\OFF12_WilliamK_04.png" />
+    <Content Include="Images\OFF12_William_02.png" />
+    <Content Include="Images\Picture1.jpg" />
+    <Content Include="Images\Picture10.jpg" />
+    <Content Include="Images\Picture10.tif" />
+    <Content Include="Images\Picture11.jpg" />
+    <Content Include="Images\Picture111.jpg" />
+    <Content Include="Images\Picture2.jpg" />
+    <Content Include="Images\Picture3.jpg" />
+    <Content Include="Images\Picture4.jpg" />
+    <Content Include="Images\Picture5.jpg" />
+    <Content Include="Images\Picture6.jpg" />
+    <Content Include="Images\Picture7.jpg" />
+    <Content Include="Images\Picture8.jpg" />
+    <Content Include="Images\Picture9.jpg" />
+    <Content Include="Images\PreviewImage01.png" />
+    <Content Include="Images\PreviewImage02.png" />
+    <Content Include="Images\PreviewImage03.png" />
+    <Content Include="Images\PreviewImage04.png" />
+    <Content Include="Images\PreviewImage05.png" />
+    <Content Include="Images\PreviewImage06.png" />
+    <Content Include="Images\PreviewImage07.png" />
+    <Content Include="Images\PreviewImage08.png" />
+    <Content Include="Images\PreviewImage09.png" />
+    <Content Include="Images\PreviewImage10.png" />
+    <Content Include="Images\PreviewImage11.png" />
+    <Content Include="Images\PreviewImage12.png" />
+    <Content Include="Images\PreviewImage13.png" />
+    <Content Include="Images\PreviewImage14.png" />
+    <Content Include="Images\PreviewImage15.png" />
+    <Content Include="Images\PreviewImage16.png" />
+    <Content Include="Images\PreviewImage17.png" />
+    <Content Include="Images\PreviewImage18.png" />
+    <Content Include="Images\PreviewImage19.png" />
+    <Content Include="Images\PreviewImage20.png" />
+    <Content Include="Images\sharing.jpg" />
+    <Content Include="Images\WIN11_Alissandra_01.jpg" />
+    <Content Include="Images\WIN11_Alissandra_02.png" />
+    <Content Include="Images\WIN11_Alissandra_08.png" />
+    <Content Include="Images\WIN11_Alissandra_09.png" />
+    <Content Include="Images\WIN11_Alissandra_10.png" />
+    <Content Include="Images\WIN11_Ana_01.jpg" />
+    <Content Include="Images\WIN11_Anouk_01.jpg" />
+    <Content Include="Images\WIN11_Arc_01.jpg" />
+    <Content Include="Images\WIN11_Arc_03.jpg" />
+    <Content Include="Images\WIN11_Beate_01.jpg" />
+    <Content Include="Images\WIN11_Beate_02.jpg" />
+    <Content Include="Images\WIN11_Bebe_03.png" />
+    <Content Include="Images\WIN11_Bebe_04.png" />
+    <Content Include="Images\WIN11_Bruon_01.jpg" />
+    <Content Include="Images\WIN11_Bruon_02.png" />
+    <Content Include="Images\WIN11_Bruon_03.jpg" />
+    <Content Include="Images\WIN11_Carola_02.png" />
+    <Content Include="Images\WIN11_Chloe_06.jpg" />
+    <Content Include="Images\WIN11_Dakota_06.png" />
+    <Content Include="Images\WIN11_Feng_02.jpg" />
+    <Content Include="Images\WIN11_Feng_02.tiff" />
+    <Content Include="Images\WIN11_Gabriele_02.png" />
+    <Content Include="Images\WIN11_Isa_02.jpg" />
+    <Content Include="Images\WIN11_Isa_02.tiff" />
+    <Content Include="Images\WIN11_Jayrey_03.png" />
+    <Content Include="Images\WIN11_Joi_04.jpg" />
+    <Content Include="Images\WIN11_Jonny_06.png" />
+    <Content Include="Images\WIN11_Julie_02.tiff" />
+    <Content Include="Images\WIN11_Liam_02.tiff" />
+    <Content Include="Images\WIN11_Liam_03.jpg" />
+    <Content Include="Images\WIN11_LiuJing_06.jpg" />
+    <Content Include="Images\WIN11_LiuJing_06.tiff" />
+    <Content Include="Images\WIN11_Louis_01.jpg" />
+    <Content Include="Images\WIN11_Louis_12.tiff" />
+    <Content Include="Images\WIN11_MandyJane_02.png" />
+    <Content Include="Images\WIN11_Marco_02.tiff" />
+    <Content Include="Images\WIN11_Marco_05.png" />
+    <Content Include="Images\WIN11_Marco_09.png" />
+    <Content Include="Images\WIN11_Marco_11.png" />
+    <Content Include="Images\WIN11_Marco_14.png" />
+    <Content Include="Images\WIN11_MoMo_01.jpg" />
+    <Content Include="Images\WIN11_MoMo_01.tiff" />
+    <Content Include="Images\WIN11_MoMo_04.tiff" />
+    <Content Include="Images\WIN11_Mortiz_04.tiff" />
+    <Content Include="Images\WIN11_Nayana_02.tiff" />
+    <Content Include="Images\WIN11_Nayana_04.png" />
+    <Content Include="Images\WIN11_Nayana_07.jpg" />
+    <Content Include="Images\WIN11_Nayana_10.png" />
+    <Content Include="Images\WIN11_Nayana_13.png" />
+    <Content Include="Images\WIN11_NuanNuan_02.jpg" />
+    <Content Include="Images\WIN11_Patrick_05.tiff" />
+    <Content Include="Images\WIN11_Paulo_03.png" />
+    <Content Include="Images\WIN11_Paulo_04.png" />
+    <Content Include="Images\WIN11_Pedro_02.png" />
+    <Content Include="Images\WIN11_Rain_01.png" />
+    <Content Include="Images\WIN11_Ramone_07.png" />
+    <Content Include="Images\WIN11_Ricardo_01.jpg" />
+    <Content Include="Images\WIN11_Ricardo_04.jpg" />
+    <Content Include="Images\WIN11_Ricardo_05.jpg" />
+    <Content Include="Images\WIN11_Ricardo_06.jpg" />
+    <Content Include="Images\WIN11_Sarah_01.jpg" />
+    <Content Include="Images\WIN11_Sarah_03.jpg" />
+    <Content Include="Images\WIN11_Sarah_0311.jpg" />
+    <Content Include="Images\WIN11_Scene_01.png" />
+    <Content Include="Images\WIN11_Scene_03.jpg" />
+    <Content Include="Images\WIN11_Scene_04.jpg" />
+    <Content Include="Images\WIN11_Scene_05.jpg" />
+    <Content Include="Images\WIN11_Scene_06.jpg" />
+    <Content Include="Images\WIN11_Scene_15.png" />
+    <Content Include="Images\WIN11_Scene_16.png" />
+    <Content Include="Images\WIN11_Scene_23.tiff" />
+    <Content Include="Images\WIN11_Scene_28.jpg" />
+    <Content Include="Images\WIN11_Sofia_02.png" />
+    <Content Include="Images\WIN11_Sun_01.tiff" />
+    <Content Include="Images\WIN11_Susa_07.jpg" />
+    <Content Include="Images\WIN11_Susa_07.tiff" />
+    <Content Include="Images\WIN11_Susa_09.jpg" />
+    <Content Include="Images\WIN11_Susa_09.tiff" />
+    <Content Include="Images\WIN11_Susa_11.tiff" />
+    <Content Include="Images\WIN11_Theone_02.png" />
+    <Content Include="Images\WIN11_Tom_01.jpg" />
+    <Content Include="Images\WIN11_Ultrathin_01.tiff" />
+    <Content Include="Images\WIN11_Veridiana_01.png" />
+    <Content Include="Images\WIN11_Veridiana_08.tiff" />
+    <Content Include="Images\WIN11_Viao_03.tiff" />
+    <Content Include="Images\WIN11_Vincente_01.tiff" />
+    <Content Include="Images\WIN11_Xiang_05.tiff" />
+    <Content Include="Images\WIN12_Jose_03.tiff" />
+    <Content Include="SourceIpsum.txt" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -6,6 +6,7 @@
       xmlns:controls="using:Template10.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="using:XamlPerf.Views"
+      xmlns:styles="using:XamlPerf.Styles"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:vm="using:XamlPerf.ViewModels"
       RequestedTheme="Light"
@@ -14,6 +15,14 @@
     <Page.DataContext>
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Note: The resource dictionary is loaded using its type rather than the filename -->
+                <styles:Templates/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="RootGrid">
 
@@ -39,6 +48,16 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
+            <AppBarButton Icon="Library" Label="News">
+                <AppBarButton.Flyout>
+                    <MenuFlyout Placement="Bottom">
+                        <MenuFlyoutItem Click="{x:Bind ViewModel.GoToNewsStandard}" Text="Standard" />
+                        <MenuFlyoutItem Click="{x:Bind ViewModel.GoToNewsIncremental}" Text="Incremental Loading" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
+            <AppBarButton Icon="Font" Label="Text" />
+            <AppBarButton Icon="StopSlideShow" Label="Bitmaps" />
         </controls:PageHeader>
 
     </RelativePanel>
