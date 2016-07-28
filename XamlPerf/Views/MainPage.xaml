@@ -40,6 +40,7 @@
                 </AppBarButton.Flyout>
             </AppBarButton>
             <AppBarButton Icon="Font" Label="Text" Click="{x:Bind ViewModel.GoToTextPage}" />
+            <AppBarButton Icon="Play" Label="Animate" Click="{x:Bind ViewModel.GoToFrameRatePage}" />
             <AppBarButton Icon="StopSlideShow" Label="Bitmaps">
                 <AppBarButton.Flyout>
                     <MenuFlyout Placement="Bottom">
@@ -56,8 +57,6 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <AppBarButton Icon="Font" Label="Text" />
-            <AppBarButton Icon="StopSlideShow" Label="Bitmaps" />
         </controls:PageHeader>
 
     </RelativePanel>

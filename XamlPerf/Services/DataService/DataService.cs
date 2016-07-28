@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Template10.Common;
+using Windows.ApplicationModel;
 
 namespace XamlPerf.Services.DataService
 {
@@ -36,6 +37,15 @@ namespace XamlPerf.Services.DataService
         public async Task<Article> GetArticleAsync(int id)
         {
             return (await GetArticlesAsync()).FirstOrDefault(x => x.Id.Equals(id));
+        }
+
+        public async Task<IEnumerable<string>> GetImagesAsync()
+        {
+            var folder = Package.Current.InstalledLocation;
+            folder = await folder.GetFolderAsync("Assets");
+            folder = await folder.GetFolderAsync("BigBitmaps");
+            var files = await folder.GetFilesAsync();
+            return files.Select(x => x.Path);
         }
 
         #region favorites

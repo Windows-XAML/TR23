@@ -23,6 +23,7 @@ namespace XamlPerf.ViewModels
         public void GoToBitmapInefficient() { NavigationService.Navigate(typeof(Views.BitmapInefficient)); }
         public void GoToNewsStandard() { NavigationService.Navigate(typeof(Views.NewsStandardPage)); }
         public void GoToNewsIncremental() { NavigationService.Navigate(typeof(Views.NewsIncrementalPage)); }
+        public void GoToFrameRatePage() { NavigationService.Navigate(typeof(Views.FrameratePage)); }
     }
 }
 

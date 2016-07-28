@@ -112,6 +112,9 @@
     <Compile Include="Views\BitmapInefficient.xaml.cs">
       <DependentUpon>BitmapInefficient.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\FrameratePage.xaml.cs">
+      <DependentUpon>FrameratePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\MailRelativePanel.xaml.cs">
       <DependentUpon>MailRelativePanel.xaml</DependentUpon>
     </Compile>
@@ -126,6 +129,9 @@
     </Compile>
     <Compile Include="Views\NewsIncrementalPage.xaml.cs">
       <DependentUpon>NewsIncrementalPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TextPage.xaml.cs">
+      <DependentUpon>TextPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -179,6 +185,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Styles\Templates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FrameratePage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
