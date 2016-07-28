@@ -17,9 +17,9 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-            <!-- Note: The resource dictionary is loaded using its type rather than the filename -->
-            <styles:Templates/>
-        </ResourceDictionary.MergedDictionaries>
+                <!-- Note: The resource dictionary is loaded using its type rather than the filename -->
+                <styles:Templates/>
+            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
     <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -83,52 +83,16 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
-        <!--<controls:PageHeader x:Name="pageHeader" Text="Template 10 News App">
-            --><!--  place stretched, across top  --><!--
-            <RelativePanel.AlignTopWithPanel>True</RelativePanel.AlignTopWithPanel>
-            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
-            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
-            --><!--  secondary commands  --><!--
-            <controls:PageHeader.SecondaryCommands>
-                <AppBarButton Click="{x:Bind ViewModel.GotoSettings}" Label="Settings" />
-                <AppBarButton Click="{x:Bind ViewModel.GotoPrivacy}" Label="Privacy" />
-                <AppBarButton Click="{x:Bind ViewModel.GotoAbout}" Label="About" />
-            </controls:PageHeader.SecondaryCommands>
-        </controls:PageHeader>-->
-
-        <!--<TextBox x:Name="filterTextBox" MinWidth="250"
-                 MinHeight="62" Margin="16,16,16,0"
-                 Header="Filter articles"
-                 Text="{Binding FilterString, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
-            --><!--  place below page header  --><!--
-            <RelativePanel.Below>pageHeader</RelativePanel.Below>
-            <RelativePanel.AlignLeftWithPanel>True</RelativePanel.AlignLeftWithPanel>
-            <Interactivity:Interaction.Behaviors>
-                --><!--  enable submit on enter key  --><!--
-                <Core:EventTriggerBehavior EventName="TextChanged">
-                    <Core:CallMethodAction MethodName="Filter" TargetObject="{Binding}" />
-                </Core:EventTriggerBehavior>
-                <Behaviors:KeyBehavior Key="Enter">
-                    <Core:CallMethodAction MethodName="Filter" TargetObject="{Binding}" />
-                </Behaviors:KeyBehavior>
-            </Interactivity:Interaction.Behaviors>
-        </TextBox>-->
 
         <GridView x:Name="ItemsGridView"
-                  ItemTemplate="{StaticResource ArticleListItemTemplate}"
+                  ItemTemplate="{StaticResource ArticleStandardListItemTemplate}"
                   ItemsSource="{Binding Articles}" Padding="16,24,16,16"
-                  SelectedItem="{Binding Article, Mode=TwoWay}"
-                  RelativePanel.AlignLeftWithPanel="True"
+                   RelativePanel.AlignLeftWithPanel="True"
                   RelativePanel.AlignRightWithPanel="True"
                   RelativePanel.AlignBottomWithPanel="True"
                   RelativePanel.AlignTopWithPanel="True"
-                  SelectionMode="Single">
+                 SelectionMode="Single">
 
-            <!--  place under to filter textbox  -->
-            <!--<RelativePanel.Below>filterTextBox</RelativePanel.Below>
-            <RelativePanel.AlignLeftWith>filterTextBox</RelativePanel.AlignLeftWith>
-            <RelativePanel.AlignRightWithPanel>True</RelativePanel.AlignRightWithPanel>
-            <RelativePanel.AlignBottomWithPanel>True</RelativePanel.AlignBottomWithPanel>-->
 
         </GridView>
 

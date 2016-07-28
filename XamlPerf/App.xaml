@@ -35,6 +35,24 @@
                     <Visibility>Visible</Visibility>
                 </c:ValueWhenConverter.Otherwise>
             </c:ValueWhenConverter>
+
+            <DataTemplate x:Key="ArticleStandardListItemTemplate">
+                <Grid>
+                    <Grid.Background>
+                        <ImageBrush AlignmentX="Center" AlignmentY="Top"
+                                    ImageSource="{Binding Image}" Stretch="UniformToFill" />
+                    </Grid.Background>
+                    <StackPanel VerticalAlignment="Bottom" Padding="8">
+                        <StackPanel.Background>
+                            <SolidColorBrush Opacity=".5" Color="{ThemeResource SystemAccentColor}" />
+                        </StackPanel.Background>
+                        <TextBlock Foreground="White" MaxLines="2"
+                                   Text="{Binding Headline}" TextTrimming="WordEllipsis"
+                                   TextWrapping="WrapWholeWords" />
+                    </StackPanel>
+                </Grid>
+            </DataTemplate>
+
         </ResourceDictionary>
 
     </Application.Resources>
