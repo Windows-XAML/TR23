@@ -1,0 +1,68 @@
+﻿<Page
+    x:Class="XamlPerf.Views.BitmapInefficient"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:XamlPerf.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <GridView.ItemTemplate>
+            <DataTemplate>
+                <Image Source="{Binding}" Height="90" Width="160" />
+            </DataTemplate>
+        </GridView.ItemTemplate>
+        <GridView.Items>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_16_42_13_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160625_20_23_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_26_31_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160706_14_45_26_Rich.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160707_13_26_32_Pro.jpg</x:String>
+            <x:String>ms-appx:///Assets/BigBitmaps/WP_20160721_18_05_46_Pro.jpg</x:String>
+        </GridView.Items>
+    </GridView>
+
+</Page>

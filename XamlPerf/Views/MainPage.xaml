@@ -15,7 +15,7 @@
         <vm:MainPageViewModel x:Name="ViewModel" />
     </Page.DataContext>
 
-    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <RelativePanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" x:Name="RootGrid">
 
         <controls:PageHeader x:Name="pageHeader"
                              Content="Main Page"
@@ -30,8 +30,15 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
-            <AppBarButton Icon="Font" Label="Text" />
-            <AppBarButton Icon="StopSlideShow" Label="Bitmaps" />
+            <AppBarButton Icon="Font" Label="Text" Click="{x:Bind ViewModel.GoToTextPage}" />
+            <AppBarButton Icon="StopSlideShow" Label="Bitmaps">
+                <AppBarButton.Flyout>
+                    <MenuFlyout Placement="Bottom">
+                        <MenuFlyoutItem Click="{x:Bind ViewModel.GoToBitmapInefficient}" Text="Inefficient" />
+                        <MenuFlyoutItem Click="{x:Bind ViewModel.GoToBitmapEfficient}" Text="Efficient" />
+                    </MenuFlyout>
+                </AppBarButton.Flyout>
+            </AppBarButton>
         </controls:PageHeader>
 
     </RelativePanel>

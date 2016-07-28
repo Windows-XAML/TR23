@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation.Diagnostics;
 using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Data;
 
 namespace XamlPerf
@@ -18,11 +19,17 @@ namespace XamlPerf
             InitializeComponent();
         }
 
-        public override UIElement CreateRootElement(IActivatedEventArgs e) => NavigationServiceFactory(BackButton.Attach, ExistingContent.Include).Frame;
+        public override UIElement CreateRootElement(IActivatedEventArgs e)
+        {
+            var frame = NavigationServiceFactory(BackButton.Attach, ExistingContent.Exclude).Frame;
+            RelativePanel.SetAlignLeftWithPanel(frame, true);
+            RelativePanel.SetAlignRightWithPanel(frame, true);
+            RelativePanel.SetAlignBottomWithPanel(frame, true);
+            return new Views.MainPage(frame);
+        }
 
         public override async Task OnStartAsync(StartKind startKind, IActivatedEventArgs args)
         {
-            NavigationService.Navigate(typeof(Views.MainPage));
             await Task.CompletedTask;
         }
     }
