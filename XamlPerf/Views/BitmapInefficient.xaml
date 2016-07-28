@@ -10,7 +10,7 @@
     <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ItemsSource="{x:Bind Items}">
         <GridView.ItemTemplate>
             <DataTemplate>
-                <Image Source="{Binding}" Height="90" Width="160" />
+                <Image Source="{Binding}" Height="90" Width="160" Stretch="UniformToFill" />
             </DataTemplate>
         </GridView.ItemTemplate>
     </GridView>

@@ -10,9 +10,9 @@
     <GridView Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ItemsSource="{x:Bind Items}">
         <GridView.ItemTemplate>
             <DataTemplate>
-                <Image Height="90" Width="160">
+                <Image Height="90" Width="160" Stretch="UniformToFill">
                     <Image.Source>
-                        <BitmapImage UriSource="{Binding}" DecodePixelHeight="90" DecodePixelWidth="160" />
+                        <BitmapImage UriSource="{Binding}" DecodePixelHeight="90" />
                     </Image.Source>
                 </Image>
             </DataTemplate>

@@ -41,6 +41,7 @@
             </AppBarButton>
             <AppBarButton Icon="Font" Label="Text" Click="{x:Bind ViewModel.GoToTextPage}" />
             <AppBarButton Icon="Play" Label="Animate" Click="{x:Bind ViewModel.GoToFrameRatePage}" />
+            <AppBarButton Icon="ViewAll" Label="Overdraw" Click="{x:Bind ViewModel.GoToOverdrawPage}" />
             <AppBarButton Icon="StopSlideShow" Label="Bitmaps">
                 <AppBarButton.Flyout>
                     <MenuFlyout Placement="Bottom">

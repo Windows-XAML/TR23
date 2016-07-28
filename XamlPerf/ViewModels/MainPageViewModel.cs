@@ -1,10 +1,4 @@
-using System.Collections.Generic;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
 using Template10.Mvvm;
-using Template10.Services.NavigationService;
-using Windows.UI.Xaml.Navigation;
 using Template10.Common;
 
 namespace XamlPerf.ViewModels
@@ -24,6 +18,7 @@ namespace XamlPerf.ViewModels
         public void GoToNewsStandard() { NavigationService.Navigate(typeof(Views.NewsStandardPage)); }
         public void GoToNewsIncremental() { NavigationService.Navigate(typeof(Views.NewsIncrementalPage)); }
         public void GoToFrameRatePage() { NavigationService.Navigate(typeof(Views.FrameratePage)); }
+        public void GoToOverdrawPage() { NavigationService.Navigate(typeof(Views.OverdrawPage)); }
     }
 }
 

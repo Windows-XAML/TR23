@@ -130,6 +130,9 @@
     <Compile Include="Views\NewsIncrementalPage.xaml.cs">
       <DependentUpon>NewsIncrementalPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\OverdrawPage.xaml.cs">
+      <DependentUpon>OverdrawPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TextPage.xaml.cs">
       <DependentUpon>TextPage.xaml</DependentUpon>
     </Compile>
@@ -143,12 +146,17 @@
   <ItemGroup>
     <Content Include="Assets\BigBitmaps\WP_20160423_08_54_36_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160430_09_17_54_Pro.jpg" />
+    <Content Include="Assets\BigBitmaps\WP_20160430_19_55_31_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160510_09_49_56_Pro.jpg" />
+    <Content Include="Assets\BigBitmaps\WP_20160510_10_32_22_Pro.jpg" />
+    <Content Include="Assets\BigBitmaps\WP_20160526_18_50_41_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160527_12_35_29_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160527_14_24_25_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160529_11_42_46_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160530_15_40_32_Pro.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160530_20_28_53_Pro.jpg" />
+    <Content Include="Assets\BigBitmaps\WP_20160617_00_57_10_Pro.jpg" />
+    <Content Include="Assets\BigBitmaps\WP_20160625_14_06_44_Rich.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160625_16_40_38_Rich.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160625_16_42_13_Rich.jpg" />
     <Content Include="Assets\BigBitmaps\WP_20160625_20_23_26_Rich.jpg" />
@@ -189,8 +197,8 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\FrameratePage.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\MailRelativePanel.xaml">
       <SubType>Designer</SubType>
@@ -203,6 +211,10 @@
     <Page Include="Views\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\OverdrawPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TextPage.xaml">
       <SubType>Designer</SubType>
