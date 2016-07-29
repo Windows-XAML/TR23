@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="App11.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App11"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <!--<local:MyRectangle />
+        <local:MyRectangle />
+        <local:MyRectangle />
+        <local:MyRectangle />
+        <local:MyRectangle />-->
+
+        <!--<local:MyRectangle Visibility="Collapsed" />
+        <local:MyRectangle Visibility="Collapsed" />
+        <local:MyRectangle Visibility="Collapsed" />
+        <local:MyRectangle Visibility="Collapsed" />
+        <local:MyRectangle Visibility="Collapsed" />-->
+
+        <!--<local:MyRectangle Opacity="0" />
+        <local:MyRectangle Opacity="0" />
+        <local:MyRectangle Opacity="0" />
+        <local:MyRectangle Opacity="0" />
+        <local:MyRectangle Opacity="0" />-->
+
+        <local:MyRectangle x:Name="Rect1" x:DeferLoadStrategy="Lazy" />
+        <local:MyRectangle x:Name="Rect2" x:DeferLoadStrategy="Lazy" />
+        <local:MyRectangle x:Name="Rect3" x:DeferLoadStrategy="Lazy" />
+        <local:MyRectangle x:Name="Rect4" x:DeferLoadStrategy="Lazy" />
+        <local:MyRectangle x:Name="Rect5" x:DeferLoadStrategy="Lazy" />
+        <Button Content="Show" Click="Button_Click" HorizontalAlignment="Center" />
+
+    </StackPanel>
+</Page>
