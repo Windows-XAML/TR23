@@ -1,5 +1,6 @@
 using Template10.Mvvm;
 using Template10.Common;
+using System;
 
 namespace XamlPerf.ViewModels
 {
@@ -19,6 +20,8 @@ namespace XamlPerf.ViewModels
         public void GoToNewsIncremental() { NavigationService.Navigate(typeof(Views.NewsIncrementalPage)); }
         public void GoToFrameRatePage() { NavigationService.Navigate(typeof(Views.FrameratePage)); }
         public void GoToOverdrawPage() { NavigationService.Navigate(typeof(Views.OverdrawPage)); }
+        public void Collect() { GC.Collect(); }
+
     }
 }
 

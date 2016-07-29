@@ -58,6 +58,7 @@
                     </MenuFlyout>
                 </AppBarButton.Flyout>
             </AppBarButton>
+            <AppBarButton Icon="Delete" Label="Collect" Click="{x:Bind ViewModel.Collect}" />
         </controls:PageHeader>
 
     </RelativePanel>

@@ -12,6 +12,71 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateTiny">
+                    <VisualState.Setters>
+                        <Setter Target="RightReplyButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyAllButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightForwardButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightDeleteButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightSetFlagButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightMarkAsReadButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="LeftColumn.Width" Value="48"/>
+                        <Setter Target="CenterColumn.Width" Value="0"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateSmall">
+                    <VisualState.Setters>
+                        <Setter Target="LeftColumn.Width" Value="48"/>
+                        <Setter Target="RightReplyButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyAllButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightForwardButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightDeleteButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightSetFlagButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightMarkAsReadButton.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="680"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock1.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock2.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock3.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock4.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="LeftColumn.Width" Value="48"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="716"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock1.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock2.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock3.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock4.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="920"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWider">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
         <Grid.RowDefinitions>
             <RowDefinition Height="48" />
             <RowDefinition Height="48" />
@@ -19,8 +84,8 @@
             <RowDefinition Height="48" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="256" />
-            <ColumnDefinition Width="325" />
+            <ColumnDefinition Width="256" x:Name="LeftColumn" />
+            <ColumnDefinition Width="325" x:Name="CenterColumn" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -28,7 +93,7 @@
 
         <Button x:Name="LeftHamburgerButton"
                 Background="Transparent"
-                RequestedTheme="Dark">
+                RequestedTheme="Dark" Width="{StaticResource SquareWidth}" Height="{StaticResource SquareHeight}">
             <FontIcon FontSize="20" Glyph="&#xE700;" />
         </Button>
 
@@ -230,7 +295,7 @@
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
 
-            <Button x:Name="CenterListButton"
+            <ToggleButton x:Name="CenterListButton"
                     Grid.Column="2"
                     Width="{StaticResource SquareWidth}"
                     Height="{StaticResource SquareHeight}"
@@ -242,9 +307,9 @@
                         <SolidColorBrush Color="SteelBlue" />
                     </FontIcon.Foreground>
                 </FontIcon>
-            </Button>
+            </ToggleButton>
 
-            <ToggleButton x:Name="CenterRefreshButton"
+            <Button x:Name="CenterRefreshButton"
                           Grid.Column="1"
                           Width="{StaticResource SquareWidth}"
                           Height="{StaticResource SquareHeight}"
@@ -256,7 +321,7 @@
                         <SolidColorBrush Color="SteelBlue" />
                     </FontIcon.Foreground>
                 </FontIcon>
-            </ToggleButton>
+            </Button>
 
             <TextBox x:Name="CenterSearchTextBox"
                      Height="{StaticResource SquareHeight}"
@@ -377,7 +442,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xEA56;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Reply" />
                 </StackPanel>
@@ -392,7 +457,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xEA58;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock1" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Reply all" />
                 </StackPanel>
@@ -407,7 +472,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xEA57;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock2" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Forward" />
                 </StackPanel>
@@ -422,7 +487,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xE74D;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock3" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Delete" />
                 </StackPanel>
@@ -437,7 +502,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xE7C1;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock4" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Set flag" />
                 </StackPanel>
@@ -452,7 +517,7 @@
                               FontSize="20"
                               Foreground="SteelBlue"
                               Glyph="&#xE8C3;" />
-                    <TextBlock FontWeight="Light"
+                    <TextBlock x:Name="textBlock5" FontWeight="Light"
                                Foreground="SteelBlue"
                                Text="Mark as read" />
                 </StackPanel>
@@ -514,7 +579,7 @@
                        FontWeight="Bold"
                        Foreground="DimGray"
                        RelativePanel.Below="InitialsBackground"
-                       Text="The quick brown fox jumps over the lazy dog" />
+                       Text="Using standard Panels for layout" />
 
             <TextBlock x:Name="MessageRecipient"
                        Foreground="DimGray"

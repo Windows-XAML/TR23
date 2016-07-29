@@ -15,6 +15,92 @@
 
     <RelativePanel Background="White">
 
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStateTiny">
+                    <VisualState.Setters>
+                        <Setter Target="LeftBackground.(FrameworkElement.Width)" Value="48"/>
+                        <Setter Target="RightMarkAsReadButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightSetFlagButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightDeleteButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightForwardButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyAllButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterMessageList.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterListButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterRefreshButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterSearchTextBox.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterSearchGlyph.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterSearchPlaceholder.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="CenterBackground.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="LeftAccountList.(FrameworkElement.Margin)">
+                            <Setter.Value>
+                                <Thickness>1,0,-1,0</Thickness>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Target="BottomCalendarButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSettingsButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSmileButton.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateSmall">
+                    <VisualState.Setters>
+                        <Setter Target="LeftBackground.(FrameworkElement.Width)" Value="48"/>
+                        <Setter Target="RightMarkAsReadButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightSetFlagButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightDeleteButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightForwardButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyAllButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="RightReplyButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomCalendarButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSettingsButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSmileButton.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="680"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateNormal">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock1.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock2.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock3.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock4.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="LeftBackground.(FrameworkElement.Width)" Value="48"/>
+                        <Setter Target="BottomCalendarButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSettingsButton.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="BottomSmileButton.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="716"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWide">
+                    <VisualState.Setters>
+                        <Setter Target="textBlock.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock1.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock2.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock3.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock4.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="textBlock5.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="920"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateWider">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1280"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
         <Rectangle x:Name="LeftBackground"
                    Width="{StaticResource LeftWidth}"
                    Fill="#FF1B2944"
@@ -52,7 +138,7 @@
                   Width="{StaticResource LeftWidth}"
                   ItemsSource="{x:Bind Accounts}"
                   RelativePanel.Below="LeftNewMailButton"
-                  RequestedTheme="Dark">
+                  RequestedTheme="Dark" RelativePanel.AlignRightWith="LeftBackground" RelativePanel.AlignLeftWith="LeftBackground">
             <ListView.Header>
                 <Button Width="{StaticResource LeftWidth}"
                         HorizontalContentAlignment="Left"
@@ -104,7 +190,8 @@
                   Width="{StaticResource LeftWidth}"
                   ItemsSource="{x:Bind Folders}"
                   RelativePanel.Below="LeftAccountList"
-                  RequestedTheme="Dark">
+                  RelativePanel.Above="LeftLine"
+                  RequestedTheme="Dark" RelativePanel.AlignRightWith="LeftBackground" RelativePanel.AlignLeftWith="LeftBackground">
             <ListView.Header>
                 <Button Width="{StaticResource LeftWidth}"
                         HorizontalContentAlignment="Left"
@@ -375,7 +462,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xE8C3;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Mark as read" />
             </StackPanel>
@@ -391,7 +478,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xE7C1;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock1" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Set flag" />
             </StackPanel>
@@ -407,7 +494,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xE74D;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock2" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Delete" />
             </StackPanel>
@@ -423,7 +510,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xEA57;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock3" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Forward" />
             </StackPanel>
@@ -439,7 +526,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xEA58;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock4" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Reply all" />
             </StackPanel>
@@ -455,7 +542,7 @@
                           FontSize="20"
                           Foreground="SteelBlue"
                           Glyph="&#xEA56;" />
-                <TextBlock FontWeight="Light"
+                <TextBlock x:Name="textBlock5" FontWeight="Light"
                            Foreground="SteelBlue"
                            Text="Reply" />
             </StackPanel>
@@ -501,7 +588,7 @@
                        FontWeight="Bold"
                        Foreground="DimGray"
                        RelativePanel.Below="InitialsBackground"
-                       Text="The quick brown fox jumps over the lazy dog" />
+                       Text="Using the Relative Panel for layout" />
 
             <TextBlock x:Name="MessageRecipient"
                        Foreground="DimGray"
